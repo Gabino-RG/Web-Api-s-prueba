@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Search Dark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1 class="logo">🔍 <span>buscar</span> <span style="color:var(--accent)">dark</span></h1>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="q" placeholder="¿Qué estás buscando?" class="search-input" autofocus>
+            <button id="btnSearch" class="btn primary">Buscar</button>
+            <button id="btnClear" class="btn secondary">Limpiar</button>
+        </div>
+
+        <div id="filterSection" class="filters-panel">
+            <div class="filter-group">
+                <label>Categoría</label>
+                <select id="category" class="filter-select">
+                    <option value="">Todas</option>
+                    <option value="Electrónica">Electrónica</option>
+                    <option value="Computación">Computación</option>
+                    <option value="Educación">Educación</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Precio Mín</label>
+                <input type="number" id="min" placeholder="0" class="filter-input">
+            </div>
+            <div class="filter-group">
+                <label>Precio Máx</label>
+                <input type="number" id="max" placeholder="9999" class="filter-input">
+            </div>
+            <div class="filter-group">
+                <label>Orden</label>
+                <select id="sort" class="filter-select">
+                    <option value="relevance">Relevancia</option>
+                    <option value="price_asc">Menor precio</option>
+                    <option value="price_desc">Mayor precio</option>
+                    <option value="newest">Nuevos</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="status" class="status-message"></div>
+        <section id="results" class="results-grid">
+            <p class="placeholder">Ingresa un término para comenzar.</p>
+        </section>
+        <div id="pagination" class="pagination-container"></div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
