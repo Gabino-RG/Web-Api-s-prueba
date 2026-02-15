@@ -3,55 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Search Dark</title>
+    <title>DarkSeeker Pro · Engine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="container">
         <header class="header">
             <h1 class="logo">🔍 <span>buscar</span> <span style="color:var(--accent)">dark</span></h1>
+            <p class="subtitle">Buscador avanzado con Relevancia y Filtros Híbridos</p>
         </header>
 
         <div class="search-bar">
-            <input type="text" id="q" placeholder="¿Qué estás buscando?" class="search-input" autofocus>
+            <input type="text" id="q" placeholder="¿Qué producto o curso buscas?" class="search-input" autofocus>
             <button id="btnSearch" class="btn primary">Buscar</button>
             <button id="btnClear" class="btn secondary">Limpiar</button>
         </div>
 
         <div id="filterSection" class="filters-panel">
+            
             <div class="filter-group">
                 <label>Categoría</label>
                 <select id="category" class="filter-select">
-                    <option value="">Todas</option>
+                    <option value="">Todas las categorías</option>
                     <option value="Electrónica">Electrónica</option>
                     <option value="Computación">Computación</option>
                     <option value="Educación">Educación</option>
                 </select>
             </div>
-            <div class="filter-group">
-                <label>Precio Mín</label>
-                <input type="number" id="min" placeholder="0" class="filter-input">
+
+            <div class="filter-group" style="grid-column: span 2;">
+                <label>Filtrar por Etiquetas (Chips o Manual)</label>
+                <input type="text" id="tags" placeholder="Manual: tag1, tag2..." class="filter-input">
+                <div id="tagChips" class="tag-chips-container"></div>
             </div>
+
             <div class="filter-group">
-                <label>Precio Máx</label>
-                <input type="number" id="max" placeholder="9999" class="filter-input">
+                <label>Rango de Precio ($)</label>
+                <div style="display: flex; gap: 8px;">
+                    <input type="number" id="min" placeholder="Mín" class="filter-input" style="width: 50%;">
+                    <input type="number" id="max" placeholder="Máx" class="filter-input" style="width: 50%;">
+                </div>
             </div>
+
             <div class="filter-group">
-                <label>Orden</label>
+                <label>Ordenar por</label>
                 <select id="sort" class="filter-select">
                     <option value="relevance">Relevancia</option>
                     <option value="price_asc">Menor precio</option>
                     <option value="price_desc">Mayor precio</option>
-                    <option value="newest">Nuevos</option>
+                    <option value="newest">Más recientes</option>
                 </select>
             </div>
         </div>
 
         <div id="status" class="status-message"></div>
+
         <section id="results" class="results-grid">
-            <p class="placeholder">Ingresa un término para comenzar.</p>
+            <p class="placeholder">✨ Ingresa un término o selecciona tags para comenzar.</p>
         </section>
-        <div id="pagination" class="pagination-container"></div>
+
+        <nav id="pagination" class="pagination-container"></nav>
     </main>
 
     <script src="app.js"></script>
