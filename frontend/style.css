@@ -307,3 +307,30 @@ body {
         gap: 0.5rem;
     }
 }
+
+/* ===== ESTILOS DEL REPORTE DE TESTS ===== */
+.test-report-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.test-item-report {
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.test-pass { color: var(--success); font-weight: bold; }
+.test-fail { color: #e74c3c; font-weight: bold; }

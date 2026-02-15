@@ -16,7 +16,14 @@
         <div class="search-bar">
             <input type="text" id="q" placeholder="¿Qué producto o curso buscas?" class="search-input" autofocus>
             <button id="btnSearch" class="btn primary">Buscar</button>
+            <button id="btnRunTests" class="btn secondary" style="border-color: var(--accent); color: var(--accent);">🧪 Test</button>
             <button id="btnClear" class="btn secondary">Limpiar</button>
+        </div>
+
+        <div id="testReport" class="test-report-container" style="display: none;">
+            <h3>📊 Reporte de Calidad</h3>
+            <div id="testResultsList"></div>
+            <button onclick="document.getElementById('testReport').style.display='none'" class="btn primary" style="margin-top:15px; width:100%">Entendido</button>
         </div>
 
         <div id="filterSection" class="filters-panel">
@@ -32,7 +39,7 @@
             </div>
 
             <div class="filter-group" style="grid-column: span 2;">
-                <label>Filtrar por Etiquetas (Chips o Manual)</label>
+                <label>Filtrar por Etiquetas (Manual o Chips)</label>
                 <input type="text" id="tags" placeholder="Manual: tag1, tag2..." class="filter-input">
                 <div id="tagChips" class="tag-chips-container"></div>
             </div>
@@ -65,6 +72,8 @@
         <nav id="pagination" class="pagination-container"></nav>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="app.js"></script>
+    <script src="tests.js"></script>
 </body>
 </html>
